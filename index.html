@@ -25,7 +25,7 @@
                         <ul class="list-unstyled">
                             <li class="list-item" v-for="(item, index) in todolist">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div v-if="!item.edit" v-bind:class="item.done ? 'stroked' : ''">
+                                    <div v-if="!item.edit" v-bind:class="item.done ? 'stroked' : ''"  @click="checkTask(index)">
                                         {{index + 1}} - {{item.text}}
                                     </div>
                                     <div v-else>
@@ -33,7 +33,7 @@
                                     </div>
                                     <div>
                                         <button class="button btn-square button-delete" @click="removeTask(index)">
-                                            <i class="fas fa-trash"></i>
+                                            <i class="fa-solid fa-xmark"></i>
                                         </button>
                                     </div>
                                 </div>
