@@ -1,13 +1,14 @@
-const {createApp} = Vue;
-
+const {
+    createApp
+} = Vue;
+// Array di oggetti
 createApp({
     data(){
         return{
             newTask: '',
-            search: '',
             todolist:[
                 {
-                    text:'Fare la lista dei regali di natale;',
+                    text:'Creare un sito che permetta agli utenti di fare una lista di regali per natale;',
                     done: false,
                 },
                 {
@@ -33,8 +34,9 @@ createApp({
             ]
         }
     },
-
+// Metodi
     methods:{
+        // Aggiunge elementi alla lista 
         addTask(){
             let object = {
                 text: this.newTask,
@@ -43,9 +45,11 @@ createApp({
             this.todolist.push(object);
             this.newTask = '';
         },
+        // Rimuove elementi dalla lista
         removeTask(index){
             this.todolist.splice(index, 1);
         },
+        // Controlla se gli elementi nella lista hanno done = true.
         checkTask(index){
             let task = this.todolist[index];
             if(task.done == true){

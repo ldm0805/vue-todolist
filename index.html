@@ -11,11 +11,12 @@
 </head>
 <body>
     <div id="app">
+        <!-- Container -->
         <div class="container mb-5">
             <div class="row">
                 <div class="col-12">
                     <div class="text-center my-3">
-                        <h2>Vue ToDoList</h2>
+                        <h2>Lista di cose da fare</h2>
                     </div>
                 </div>
             </div>
@@ -23,15 +24,15 @@
                 <div class="col-12">
                     <div class="todolist-container">
                         <ul class="list-unstyled">
+                            <!-- Ciclo per stampare l'array di oggetti -->
                             <li class="list-item" v-for="(item, index) in todolist">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div v-if="!item.edit" v-bind:class="item.done ? 'stroked' : ''"  @click="checkTask(index)">
+                                    <!-- Controllo ed evntuale assegnazione classe stroked al click sull'elemento della lista -->
+                                    <div class="cursor" v-if="!item.edit" v-bind:class="item.done ? 'stroked' : ''"  @click="checkTask(index)">
                                         {{index + 1}} - {{item.text}}
                                     </div>
-                                    <div v-else>
-                                        <input class="form-control" type="text" v-model="item.text">
-                                    </div>
                                     <div>
+                                        <!-- Bottone per rimuovere gli elementi -->
                                         <button class="button btn-square button-delete" @click="removeTask(index)">
                                             <i class="fa-solid fa-xmark"></i>
                                         </button>
@@ -45,8 +46,9 @@
             <div class="row mt-3">
                 <div class="col-12">
                     <div class="d-flex w-100 gap-5">
+                        <!-- Input per inserire nuovi elementi con pulsante ed al click del tasto enter-->
                         <input class="form-control" placeholder="Inserisci nuovo task" v-model="newTask" type="text" @keyup.enter="addTask">
-                        <button class="btn btn-primary" @click="addTask">Inserisci elemento</button>
+                        <button class="btn button-succes" @click="addTask">Inserisci un nuovo elemento nella lista</button>
                     </div>
                 </div>
 
