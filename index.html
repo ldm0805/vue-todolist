@@ -31,7 +31,11 @@
                                     <div v-else>
                                         <input class="form-control" type="text" v-model="item.text">
                                     </div>
-                                    
+                                    <div>
+                                        <button class="button btn-square button-delete" @click="removeTask(index)">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
