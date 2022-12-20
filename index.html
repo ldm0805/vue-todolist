@@ -11,7 +11,35 @@
 </head>
 <body>
     <div id="app">
-
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center my-3">
+                        <h2>Vue ToDoList</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="todolist-container">
+                        <ul class="list-unstyled">
+                            <li class="list-item" v-for="(item, index) in todolist">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div v-if="!item.edit" v-bind:class="item.done ? 'stroked' : ''">
+                                        {{index + 1}} - {{item.text}}
+                                    </div>
+                                    <div v-else>
+                                        <input class="form-control" type="text" v-model="item.text">
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/script.js"></script>
