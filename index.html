@@ -33,7 +33,7 @@
                                     </div>
                                     <div>
                                         <button class="button btn-square button-delete" @click="removeTask(index)">
-                                            <i class="fa-solid fa-xmark"></i>
+                                            <i class="fas fa-trash"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -41,6 +41,15 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="d-flex w-100 gap-5">
+                        <input class="form-control" placeholder="Inserisci nuovo task" v-model="newTask" type="text" @keyup.enter="addTask">
+                        <button class="btn btn-primary" @click="addTask">Inserisci elemento</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
